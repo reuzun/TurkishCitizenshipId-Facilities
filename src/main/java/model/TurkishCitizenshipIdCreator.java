@@ -8,9 +8,6 @@ import algorithms.RandomIdGenerator;
 public class TurkishCitizenshipIdCreator extends TurkishCitizenshipId{
 
 
-    public TurkishCitizenshipIdCreator(String id) throws Exception {
-        super(id);
-    }
 
     @Override
     public String create() {

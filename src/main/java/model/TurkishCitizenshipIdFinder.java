@@ -10,12 +10,8 @@ import java.util.List;
 public class TurkishCitizenshipIdFinder extends TurkishCitizenshipId{
 
 
-    public TurkishCitizenshipIdFinder(String id) throws Exception {
-        super(id);
-    }
-
     @Override
-    public List<String> listAvailableIds() throws Exception {
+    public List<String> listAvailableIds(String id) throws Exception {
         return IdFinder.findIds(id);
     }
 

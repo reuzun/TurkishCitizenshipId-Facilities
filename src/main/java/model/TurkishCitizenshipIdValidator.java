@@ -8,12 +8,8 @@ import algorithms.IdValidator;
 public class TurkishCitizenshipIdValidator extends TurkishCitizenshipId{
 
 
-    public TurkishCitizenshipIdValidator(String id) throws Exception {
-        super(id);
-    }
-
     @Override
-    public boolean validate() throws Exception {
+    public boolean validate(String id) throws Exception {
         return IdValidator.validateId(id);
     }
 
