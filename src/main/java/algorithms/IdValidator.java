@@ -1,17 +1,18 @@
 package algorithms;
 
-import model.Id;
 
-import java.util.Arrays;
 
 /**
  * @author reuzun
  */
 public class IdValidator {
 
+    /**
+     * Validates the Id. Returns true if validated.
+     * @param id : TurkishCitizenshipId
+     * */
     public static boolean validateId(String id) throws Exception {
-        Id obj = new Id(id);
-        int[] arr = obj.getIdArr();
+        int[] arr = AlgorithmUtils.getIdArr(id);
 
         if( arr[0] == 0 ) return false;
 

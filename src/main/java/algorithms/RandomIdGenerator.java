@@ -7,9 +7,11 @@ import java.util.Arrays;
  */
 public class RandomIdGenerator {
 
+    /**
+     * Generates a random validated Id.
+     * */
     public static String GenerateRandomId(){
         return AlgorithmUtils.intArrToStr(RandomIntArr());
-
     }
 
     private static int[] RandomIntArr(){

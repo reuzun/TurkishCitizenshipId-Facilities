@@ -1,9 +1,7 @@
 package algorithms;
 
-import model.Id;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,6 +11,11 @@ public class IdFinder {
 
     private static List<String> possibleIds = new ArrayList<>();
 
+    /**
+     * Figure outs all possible combinations of - values and tries to validate them.
+     * @param str Id with unknown values. Ex: 145--7896-8
+     * @return List consist of possible Id Strings
+     * */
     public static List<String> findIds(String str) throws Exception {
 
         List<Integer> indexes = new ArrayList<>();
@@ -27,18 +30,19 @@ public class IdFinder {
             }else sb.append(charArr[i]);
         }
 
-        int[] arr = new Id(sb.toString()).getIdArr();
+        int[] arr = AlgorithmUtils.getIdArr(sb.toString());
 
         // Handling first 0 - based solution.
         boolean ans = IdValidator.validateId(AlgorithmUtils.intArrToStr(arr));
         if(ans) possibleIds.add(sb.toString());
 
         findIds(arr, indexes);
-        //System.out.println("Count is : " + count);
+
         return possibleIds;
 
     }
-    //static int count = 0;
+
+
     private static void findIds(int[] arr, List<Integer> indexes) throws Exception {
         int a = -1;
         if(indexes.size() > 0) {
@@ -48,8 +52,6 @@ public class IdFinder {
             findIds(arr, indexes);
             arr[a]++;
             if(arr[a] == 10) continue;
-            //System.out.println(Arrays.toString(arr));
-            //count++;
 
             String possibleId = AlgorithmUtils.intArrToStr(arr);
 
@@ -59,11 +61,6 @@ public class IdFinder {
         indexes.add(a);
         arr[a] = 0;
     }
-
-    private static void findIdsHelper(int[] arr, List<Integer> indexes) {
-
-    }
-
 
 }
 
