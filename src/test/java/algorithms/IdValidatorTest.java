@@ -15,6 +15,12 @@ public class IdValidatorTest {
     }
 
     @Test
+    public void TurkishCitizenshipFindTest2() throws Exception {
+        boolean ans = IdValidator.validateId("19090909018");
+        Assert.assertTrue(ans);
+    }
+
+    @Test
     public void TurkishCitizenshipFindTestW() throws Exception {
         boolean ans = IdValidator.validateId("01225585259");
         Assert.assertFalse(ans);
