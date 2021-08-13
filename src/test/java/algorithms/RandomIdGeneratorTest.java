@@ -1,6 +1,5 @@
 package algorithms;
 
-import model.Id;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,10 +17,10 @@ public class RandomIdGeneratorTest {
     }
 
     @Test
-    public void RandomIdGeneratorTestLastDigit() throws Exception {
+    public void RandomIdGeneratorTestLastDigitEvenAndValidate() throws Exception {
         for(int i = 0; i < 100_000; i++) {
             String id = RandomIdGenerator.GenerateRandomId();
-            int[] arr = new Id(id).getIdArr();
+            int[] arr = AlgorithmUtils.getIdArr(id);
             boolean ans = IdValidator.validateId(id);
             Assert.assertTrue(ans && arr[10]%2==0);
         }

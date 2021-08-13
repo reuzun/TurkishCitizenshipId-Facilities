@@ -13,19 +13,19 @@ public class TurkishCitizenshipIdBuilderTest {
 
 
     @Test
-    public void TurkishCitizenshipValidatorTest() throws Exception {
+    public void TurkishCitizenshipValidatorBuildTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.VALIDATOR);
     }
 
     @Test
-    public void TurkishCitizenshipCreatorTest() throws Exception {
+    public void TurkishCitizenshipCreatorBuildTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.CREATOR);
     }
 
     @Test
-    public void TurkishCitizenshipFinderTest() throws Exception {
+    public void TurkishCitizenshipFinderBuildTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.FINDER);
 

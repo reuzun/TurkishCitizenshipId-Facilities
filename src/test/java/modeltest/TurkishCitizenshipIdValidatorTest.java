@@ -25,14 +25,14 @@ public class TurkishCitizenshipIdValidatorTest {
     }
 
     @Test(expected = WrongTypeObjectException.class)
-    public void TurkishCitizenshipValidatorTest2() throws Exception {
+    public void TurkishCitizenshipValidatorTestWithWrongType() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.CREATOR);
         obj.validate("12535246879");
     }
 
     @Test(expected = IdRuleException.class)
-    public void TurkishCitizenshipValidatorTest3() throws Exception {
+    public void TurkishCitizenshipValidatorTestWithWrongInput() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.VALIDATOR);
         obj.validate("asdasd");

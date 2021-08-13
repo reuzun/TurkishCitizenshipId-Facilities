@@ -29,7 +29,7 @@ public class TurkishCitizenshipIdCreatorTest {
     }
 
     @Test(expected = WrongTypeObjectException.class)
-    public void TurkishCitizenshipCreatorTest2() throws Exception {
+    public void TurkishCitizenshipCreatorTestWithWrongType() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.FINDER);
         obj.create();
