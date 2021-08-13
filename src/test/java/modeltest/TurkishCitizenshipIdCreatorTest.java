@@ -4,6 +4,7 @@ import exceptions.WrongTypeObjectException;
 import model.BUILDER_TYPE;
 import model.TurkishCitizenshipId;
 import model.TurkishCitizenshipIdBuilder;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -17,15 +18,19 @@ public class TurkishCitizenshipIdCreatorTest {
     @Test
     public void TurkishCitizenshipCreatorTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.CREATOR);
-        obj.create();
+        String randomId = obj.create();
+
+
+        TurkishCitizenshipId validator = new TurkishCitizenshipIdBuilder()
+                .build(BUILDER_TYPE.VALIDATOR);
+
+        Assert.assertTrue(validator.validate(randomId));
     }
 
     @Test(expected = WrongTypeObjectException.class)
     public void TurkishCitizenshipCreatorTest2() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.FINDER);
         obj.create();
     }

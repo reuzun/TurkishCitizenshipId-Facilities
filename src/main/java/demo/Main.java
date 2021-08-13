@@ -13,10 +13,9 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         TurkishCitizenshipId IdFinder = new TurkishCitizenshipIdBuilder()
-                .setId("22734---798")
                 .build(BUILDER_TYPE.FINDER);
 
-        List<String> list = IdFinder.listAvailableIds();
+        List<String> list = IdFinder.listAvailableIds("22734---798");
 
         System.out.println("Possible Id's Using 22-34112-9- : \n------------------");
         int count = 1;
@@ -33,10 +32,9 @@ public class Main {
         System.out.println("\n***************************\n");
 
         TurkishCitizenshipId IdValidator = new TurkishCitizenshipIdBuilder()
-                .setId("22734112798")
                 .build(BUILDER_TYPE.VALIDATOR);
 
-        System.out.println("Is 22734112798 a valid Id for Turkish Citizenship? " + IdValidator.validate());
+        System.out.println("Is 22734112798 a valid Id for Turkish Citizenship? " + IdValidator.validate("22734112798"));
     }
 
 }

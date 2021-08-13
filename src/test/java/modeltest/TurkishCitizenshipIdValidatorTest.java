@@ -1,9 +1,11 @@
 package modeltest;
 
+import exceptions.IdRuleException;
 import exceptions.WrongTypeObjectException;
 import model.BUILDER_TYPE;
 import model.TurkishCitizenshipId;
 import model.TurkishCitizenshipIdBuilder;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -17,17 +19,23 @@ public class TurkishCitizenshipIdValidatorTest {
     @Test
     public void TurkishCitizenshipValidatorTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.VALIDATOR);
-        obj.validate();
+        boolean ans = obj.validate("12535246879");
+        Assert.assertFalse(ans);
     }
 
     @Test(expected = WrongTypeObjectException.class)
     public void TurkishCitizenshipValidatorTest2() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.CREATOR);
-        obj.validate();
+        obj.validate("12535246879");
+    }
+
+    @Test(expected = IdRuleException.class)
+    public void TurkishCitizenshipValidatorTest3() throws Exception {
+        TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
+                .build(BUILDER_TYPE.VALIDATOR);
+        obj.validate("asdasd");
     }
 
 }

@@ -17,17 +17,15 @@ public class TurkishCitizenshipFinderTest {
     @Test
     public void TurkishCitizenshipFindTest() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.FINDER);
-        obj.listAvailableIds();
+        obj.listAvailableIds(id);
     }
 
     @Test(expected = WrongTypeObjectException.class)
     public void TurkishCitizenshipFindTest2() throws Exception {
         TurkishCitizenshipId obj = new TurkishCitizenshipIdBuilder()
-                .setId(id)
                 .build(BUILDER_TYPE.CREATOR);
-        obj.listAvailableIds();
+        obj.listAvailableIds(id);
     }
 
 }
