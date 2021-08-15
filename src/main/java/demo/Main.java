@@ -15,11 +15,12 @@ public class Main {
         TurkishCitizenshipId IdFinder = new TurkishCitizenshipIdBuilder()
                 .build(BUILDER_TYPE.FINDER);
 
-        List<String> list = IdFinder.listAvailableIds("22734---798");
+        List<String> list = IdFinder.listAvailableIds("22----127--"); // Valid ex : 22734112798
 
         System.out.println("Possible Id's Using 22-34112-9- : \n------------------");
-        int count = 1;
+        int count = 0;
         for (String s : list) System.out.printf("%-2d -> %-11s\n", (count++), s);
+        System.out.println("Total count is : " + count);
 
         System.out.println("\n***************************\n");
 
