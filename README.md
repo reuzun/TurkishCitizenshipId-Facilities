@@ -40,3 +40,6 @@ String randomId = creator .create();
 TurkishCitizenshipId finder = new TurkishCitizenshipIdBuilder()  
         .build(BUILDER_TYPE.FINDER);
 List<String> possibleIds = finder.listAvailableIds("111---1--11"); // - means unknown value.
+```
+## License
+Licensed under [GPL-3.0 License](LICENSE).
